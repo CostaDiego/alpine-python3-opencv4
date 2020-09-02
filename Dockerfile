@@ -1,8 +1,8 @@
-FROM python:3-alpine3.7
+FROM python:3.8-alpine3.7
 
 ENV CC=/usr/bin/clang \
     CXX=/usr/bin/clang++ \
-    OPENCV_VERSION=3.4.1
+    OPENCV_VERSION=4.4.0
 
 RUN echo -e '@testing http://dl-cdn.alpinelinux.org/alpine/edge/testing\n\
 http://dl-cdn.alpinelinux.org/alpine/edge/community' >> /etc/apk/repositories
