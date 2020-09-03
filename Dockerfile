@@ -1,4 +1,4 @@
-FROM python:3.8-alpine3.7
+FROM python:3-alpine3.7
 
 ENV CC=/usr/bin/clang \
     CXX=/usr/bin/clang++ \
@@ -12,11 +12,13 @@ RUN apk add -U \
         #Intel® TBB, a widely used C++ template library for task parallelism'
         libtbb@testing \
         libtbb-dev@testing \
+        libgfortran \
         # Wrapper for libjpeg-turbo
         libjpeg  \
         openblas \
-        jasper \
-    && apk add -U \
+        jasper
+
+RUN apk add -U \
       --virtual .build-dependencies \
         build-base \
         openblas-dev \
